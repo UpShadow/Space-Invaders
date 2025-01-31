@@ -8,7 +8,7 @@ class Grid {
         this.direction = "right";
         this.moveDown = false;
 
-        this.invaderVelocity = 1;
+        this.invadersVelocity = 1;
         this.invaders = this.init();
     }
 
@@ -20,9 +20,9 @@ class Grid {
                 const invader = new Invader(
                     {
                         x: col * 50 + 20,
-                        y: row * 37 + 20,
+                        y: row * 37 + 120,
                     },
-                    this.invaderVelocity,
+                    this.invadersVelocity,
                 );    
 
                 array.push(invader);
@@ -51,7 +51,7 @@ class Grid {
             if(this.moveDown) {
                 invader.moveDown();
                 invader.incrementVelocity(0.1)
-                this.invaderVelocity = invader.velocity;
+                this.invadersVelocity = invader.velocity;
             }
 
             if(this.direction === "right") invader.moveRight()
